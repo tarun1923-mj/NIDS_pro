@@ -1,0 +1,22 @@
+network-intrusion-detection-system/
+│
+├── Dataset/
+│   └── UNSW_NB15_training-set.csv
+│
+├── model/
+│   ├── ids_model.pkl
+│   ├── attack_type_model.pkl
+│   └── attack_label_encoder.pkl
+│
+├── static/
+│   └── style.css
+│
+├── templates/
+│   └── index.html
+│
+├── app.py
+├── trainmodel1.py
+├── train_attack_type_model.py
+│
+├── requirements.txt
+└── README.md

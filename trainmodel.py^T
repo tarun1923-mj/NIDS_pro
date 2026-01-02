@@ -1,0 +1,14 @@
+import pandas as pd
+
+print("Script started")
+
+data = pd.read_csv("Dataset/UNSW_NB15_training-set.csv")
+
+print("Dataset loaded successfully")
+
+X = data.drop("label", axis=1)
+y = data["label"]
+
+print("X shape:", X.shape)
+print("y shape:", y.shape)
+

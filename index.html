@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Network Intrusion Detection System</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Network Intrusion Detection System</h1>
+
+    <form method="post">
+        <input type="text" name="f1" placeholder="Feature 1" required>
+        <input type="text" name="f2" placeholder="Feature 2" required>
+        <input type="text" name="f3" placeholder="Feature 3" required>
+        <input type="text" name="f4" placeholder="Feature 4" required>
+
+        <button type="submit">Detect Intrusion</button>
+    </form>
+
+    {% if prediction %}
+        {% if prediction == "Normal Traffic" %}
+            <div class="result normal">
+                {{ prediction }}
+            </div>
+        {% else %}
+            <div class="result attack">
+                {{ prediction }}
+            </div>
+
+            {% if attack_type %}
+                <div class="result attack">
+                    <strong>Attack Type:</strong> {{ attack_type }}
+                </div>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+</div>
+
+</body>
+</html>
+
